@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="container__fluid">
+<h1>Pins</h1>
+
+    <% @pins.each do |pin| %>
+  <div class="col-lg-4">  
+    <div class="thumbnail">
+      <%= image_tag(pin.photo, :class => 'img-responsive') %>
+      <%= pin.description %>
+      <br>
+      <%= link_to 'Show', pin , :class =>'btn btn-danger' %>
+      <%= link_to 'Edit', edit_pin_path(pin) , :class =>'btn btn-danger' %>
+      <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } , :class =>'btn btn-danger' %>
+    </div>
+    </div>
+    <% end %>
+
+
+<br>
+</div>
+<%= link_to 'New Pin', new_pin_path %>
