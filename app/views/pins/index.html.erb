@@ -6,9 +6,10 @@
   <div class="col-lg-4">  
     <div class="thumbnail">
       <%= image_tag(pin.photo, :class => 'img-responsive') %>
-      <%= pin.description %>
+      <%# la linea de arriba sirve para indicar que es una imagen y no un string cons sus clases de boostrap %>
+      <%= pin.description%>
       <br>
-      <%= link_to 'Show', pin , :class =>'btn btn-danger' %>
+      <%= link_to 'Mostrar', pin , :class =>'btn btn-danger' %>
       <%= link_to 'Edit', edit_pin_path(pin) , :class =>'btn btn-danger' %>
       <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } , :class =>'btn btn-danger' %>
     </div>
@@ -18,4 +19,5 @@
 
 <br>
 </div>
-<%= link_to 'New Pin', new_pin_path %>
+<%= link_to 'New Pin', new_pin_path, :class => 'btn btn-danger col-lg-12  mb-4' %>
+<br>
